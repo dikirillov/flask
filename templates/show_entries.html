@@ -1,0 +1,37 @@
+{% block content %}
+    <h1>Resume Constructor</h1>
+    <h2>Create your resume</h2>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.full_name.label }}<br>
+            {{ form.full_name(size=32) }}<br>
+            {% for error in form.full_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.birth_date.label }}<br>
+            {{ form.birth_date(size=32) }}<br>
+            {% for error in form.birth_date.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.contact_email.label }}<br>
+            {{ form.contact_email(size=32) }}<br>
+            {% for error in form.contact_email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.contact_phone.label }}<br>
+            {{ form.contact_phone(size=32) }}<br>
+            {% for error in form.contact_phone.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit_create() }}</p>
+        <p>{{ form.submit_save() }}</p>
+    </form>
+{% endblock %}
